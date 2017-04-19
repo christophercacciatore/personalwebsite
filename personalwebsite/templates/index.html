@@ -22,9 +22,9 @@
 				<nav>
 					<ul>
 						<li><a href="#intro">Intro</a></li>
-						<li><a href="#one">What I Do</a></li>
-						<li><a href="#two">Who I Am</a></li>
-						<li><a href="#work">My Work</a></li>
+						<li><a href="#one">About</a></li>
+						<li><a href="#two">Bio</a></li>
+						<li><a href="#work">Data</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
@@ -34,11 +34,11 @@
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content">
 					<header>
-						<h2>Hey.</h2>
+						<h2>Hello!</h2>
 					</header>
-					<p>Welcome to <strong>Big Picture</strong> a responsive site template designed
-					by <a href="https://html5up.net">HTML5 UP</a>, built on <a href="http://skel.io">Skel</a>,
-					and released for free under the <a href="https://html5up.net/license">Creative Commons Attribution license</a>.</p>
+					<h3>"I want people to be afraid of how much they love me."</h3>
+					<p> - Michael Scott - Chris Cacciatore</p>
+					
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
 					</footer>
@@ -49,11 +49,9 @@
 			<section id="one" class="main style2 right dark fullscreen">
 				<div class="content box style2">
 					<header>
-						<h2>What I Do</h2>
+						<h2>About</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					<p>I hope to explore some interesting data using python modules like pandas and scikit. This website uses flask for its framework. I am not a front-end developer, so I use some cool HTML and CSS from HTML5up. I do use some D3 for basic visualizations.</p>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
@@ -62,11 +60,9 @@
 			<section id="two" class="main style2 left dark fullscreen">
 				<div class="content box style2">
 					<header>
-						<h2>Who I Am</h2>
+						<h2>Bio</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					<p>I currently work for a small startup in Austin called Upswing. I use analytical techniques to help improve retention in community colleges across the nation. My typical workflow is SQL <i class="fa fa-arrow-right" aria-hidden="true"></i> Pandas <i class="fa fa-arrow-right" aria-hidden="true"> </i> Scikit. I am annoyingly into good food and coffee. </p>
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
@@ -75,34 +71,24 @@
 			<section id="work" class="main style3 primary">
 				<div class="content">
 					<header>
-						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+						<h2>Exploratory Examples</h2>
+						<p>This data is meant to show sample workflows, but is by no means rigorous or even accurate.</p>
 					</header>
 
 					<!-- Gallery  -->
-						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+						<div>
+							<article>
+								<a href="/basketball" class="image fit"><img src="{{ url_for('static', filename='images/basketball_stock.jpg') }}"title="The Anonymous Red" alt="" /></a>
 							</article>
 							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+								<a href="/food" class="image fit"><img src="{{ url_for('static', filename='images/pizza_stock.jpg') }}" alt="" /></a>
 							</article>
 							<article class="from-left">
-								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
+								<a href="/television" class="image fit"><img src="{{ url_for('static', filename='images/television_stock.jpg') }}" alt="" /></a>
 							</article>
 							<article class="from-right">
-								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
+								<a href="/finance" class="image fit"><img src="{{ url_for('static', filename='images/finance_stock.jpg') }}" title="Carry on" alt="" /></a>
 							</article>
-							<article class="from-left">
-								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
-							</article>
-						</div>
-
 				</div>
 			</section>
 
@@ -110,8 +96,8 @@
 			<section id="contact" class="main style3 secondary">
 				<div class="content">
 					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+						<h2>Comments?</h2>
+						<p>Leave me a message</p>
 					</header>
 					<div class="box">
 						<form method="post" action="#">

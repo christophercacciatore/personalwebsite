@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Christopher Cacciatore</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='assets/css/main.css') }}">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Television</h1>
+				<nav>
+					<ul>
+						<li><a href="#intro">Intro</a></li>
+						<li><a href="#one">What I Do</a></li>
+						<li><a href="#two">Who I Am</a></li>
+						<li><a href="#work">My Work</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Intro -->
+			<section id="intro" class="main style1 dark fullscreen">
+				<div class="content">
+					<header>
+						<h2>Television Trends</h2>
+					</header>
+					<p>This data is pulled from Google Trends.</p>
+					
+					<footer>
+						<a href="#one" class="button style2 down">More</a>
+					</footer>
+				</div>
+			</section>
+
+			<section id="one" class="main style2 right dark fullscreen">
+			<body>
+			<pre>
+				<code> 
+
+
+					SELECT 
+						user_transaction.user_id, 
+						user.first_name||' '||na_user.last_name AS customer_name,  
+						MIN(EXTRACT(EPOCH FROM now() - user_history.sign_in)) AS last_login
+						SUM(COUNT(user_history.sign_in)) AS sign_in_attempts
+						SUM(COUNT(user_history.login_failure))/SUM(COUNT(user_history.sign_in)) AS incorrect_password_ratio,
+						SUM(SELECT COUNT(*) FROM (SELECT DISTINCT(user_history.login_ip))) AS ip_count
+						region.region_id,
+						region.region_name,
+						user_comments.report_feedback
+
+					FROM user_transaction
+					INNER JOIN user ON user.user_id = user_transaction.user_id
+					INNER JOIN user_history ON user_history.user_id = user.user_id
+					INNER JOIN region ON region.region_id = user.region_id
+
+					LEFT JOIN user_comments ON user_comments.user_id = user.user_id
+
+					WHERE user_history.sign_in > '01-01-2017'
+
+					GROUP BY user_transaction.user_id, user.first_name, user.last_name, user_history.sign_in, user_history.login_failure, user_history.login_ip, region.region_id, region.region_name, user_comments.report_feedback
+					
+					ORDER BY customer_name;
+
+				</code></pre>
+				</body>
+				<a href="#two" class="button style2 down anchored">Next</a>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+
+				<!-- Icons -->
+					<ul class="actions">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+			<script src="{{ url_for('static', filename='assets/js/jquery.poptrox.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+
+	</body>
+</html>
